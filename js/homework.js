@@ -52,7 +52,7 @@ let j;
 for(i=0;i<length && f;i++)
     for (j=i+1;j<length && f;j++) {
         if(mas[i]+mas[j]===7) {
-            console.log('elemets',mas[i],mas[j],'index',i,j);
+            console.log('elements',mas[i],mas[j],'index',i,j);
             f = false;
         }
     }
