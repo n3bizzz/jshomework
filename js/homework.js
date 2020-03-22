@@ -43,14 +43,14 @@ do {
 //4. Задача на массивы
 
 let mas =[];
-let length =+prompt("Введите желаюмую длинну массива");
+let length = +prompt("Введите желаюмую длинну массива");
 let f = true;
 for (let i=0; i<length;i++)
 {mas[i]=Math.floor( Math.random()*10)}
 console.log(mas);
-
+let j;
 for(i=0;i<length && f;i++)
-    for (let j=i+1;j<length && f;j++) {
+    for (j=i+1;j<length && f;j++) {
         if(mas[i]+mas[j]===7) {
             console.log('elemets',mas[i],mas[j],'index',i,j);
             f = false;
