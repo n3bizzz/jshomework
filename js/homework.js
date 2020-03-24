@@ -10,17 +10,17 @@ else if (sum>=3000) {console.log("Сумма к оплате", sum-sum*0.1, "+ �
 //2. Задача на switch
 let month= 'март';
 switch (month) {
-    case "декабрь": console.log("зима"); break;
-    case "январь": console.log("зима"); break;
+    case "декабрь":
+    case "январь":
     case "февраль": console.log("зима"); break;
-    case "март": console.log("весна"); break;
-    case "апрель": console.log("весна"); break;
+    case "март":
+    case "апрель":
     case "май": console.log("весна"); break;
-    case "июнь": console.log("лето"); break;
-    case "июль": console.log("лето"); break;
+    case "июнь":
+    case "июль":
     case "август": console.log("лето"); break;
-    case "сентябрь": console.log("осень"); break;
-    case "октябрь": console.log("осень"); break;
+    case "сентябрь":
+    case "октябрь":
     case "ноябрь": console.log("осень");
 }
 
@@ -48,9 +48,8 @@ let f = true;
 for (let i=0; i<length;i++)
 {mas[i]=Math.floor( Math.random()*10)}
 console.log(mas);
-let j;
 for(i=0;i<length-1 && f;i++)
-    for (j=i+1;j<length && f;j++) {
+    for (let j=i+1;j<length && f;j++) {
         if(mas[i]+mas[j]===7) {
             console.log('elements',mas[i],mas[j],'index',i,j);
             f = false;
