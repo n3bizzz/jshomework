@@ -35,7 +35,7 @@ do {
     if (!b) {console.log('Выход');}
     else if (a === b) {console.log("Вы угадали");}
     else if (a>b) {console.log("Загаданое число больше")}
-    else if {console.log("Загаданное число меньше");}
+    else console.log("Загаданное число меньше");
 } while(a!==b && b)
 
 
