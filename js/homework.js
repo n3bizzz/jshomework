@@ -49,7 +49,7 @@ for (let i=0; i<length;i++)
 {mas[i]=Math.floor( Math.random()*10)}
 console.log(mas);
 let j;
-for(i=0;i<length && f;i++)
+for(i=0;i<length-1 && f;i++)
     for (j=i+1;j<length && f;j++) {
         if(mas[i]+mas[j]===7) {
             console.log('elements',mas[i],mas[j],'index',i,j);
