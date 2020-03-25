@@ -26,10 +26,9 @@ str2=str2.trim();
 console.log(str1);
 console.log(str2);
 let a=str1.indexOf(str2);
-let b=0;
 if (a>=0) {
     console.log('Найдено совпадение на позиции',a);
-    b=1;
+    let b=1;
     while (a >= 0 && a+1<str1.length) {
         a = str1.indexOf(str2, a + 1);
         if (a >= 0) {
