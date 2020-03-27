@@ -41,11 +41,11 @@ while (n<=3)
 for(let i=0; i<n; i++)
     arr[i]=Math.floor( Math.random()*(+n+1));
 console.log(arr);
-i=0;
+let j=0;
 for(let el of arr) {
     if (!(el%2) && el){
-        arr1[i]=el;
-        i++;
+        arr1[j]=el;
+        j++;
     }
 }
 console.log(arr1);
