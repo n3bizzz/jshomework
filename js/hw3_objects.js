@@ -27,28 +27,18 @@ let goods = {
 };
 
 //Задача 1
-let i=0;
 let from = prompt("введите значение 'от':");
 from=from.trim();
-do{
-   if (!(from[i]>='0' && from[i]<='9')){
+while (isNaN(Number(from)) && from !== 'exit'){
        from=prompt("Введите верное значение (число); для выхода введите 'exit'");
        from=from.trim();
-       i=0;
-   }
-   else i++;
-}while (i<from.length && from!=='exit')
+}
 let to = prompt("введите значение 'до':");
 to=to.trim();
-i=0;
-do{
-    if (!(to[i]>='0' && to[i]<='9')){
-        to=prompt("Введите верное значение (число); для выхода введите 'exit'");
-        to=to.trim();
-        i=0;
-    }
-    else i++;
-}while (i<to.length && to!=='exit')
+while (isNaN(Number(to)) && to !== 'exit'){
+    to=prompt("Введите верное значение (число); для выхода введите 'exit'");
+    to=to.trim();
+}
 let filtered = {};
 for (let prod in goods){
     if (goods[prod].price>=from && goods[prod].price<=to){
