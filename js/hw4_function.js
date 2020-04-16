@@ -27,6 +27,16 @@ let word3 = 'веселая';
 let rating = spamDetect(text,word1,word2,word3);
 console.log(rating);*/
 
+//Задача 3
+function wordEndSelect (count){
+    if(count % 10 === 1 && count % 100 !== 11) {
+        console.log(count,'товар');
+    } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) {
+        console.log(count,'товара');
+    } else console.log(count,'товаров');
+ }
+let a =11117;
+wordEndSelect(a);
 
 let users = [
     {
