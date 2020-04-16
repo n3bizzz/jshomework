@@ -23,14 +23,14 @@ function spamDetect(sometext, ...words) {
             }
         }
     }
-return Math.floor(5/(arrText.length/rate));
+return Math.round(5/(arrText.length/rate));
 }
 let text = 'Вот дом, который построил Джек. А это пшеница, которая в темном чулане хранится в доме, который построил Джек. А это веселая птица-синица, которая часто ворует пшеницу, которая в темном чулане хранится в доме, который построил Джек.';
 let word1 = 'Джек';
 let word2 = 'доме';
 let word3 = 'веселая';
 let rating = spamDetect(text,word1,word2,word3);
-console.log(`оценка содержания спама ${rating} балов из 5 `);
+console.log(`оценка содержания спама ${rating}`);
 
 
 //Задача 3
