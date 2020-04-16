@@ -27,18 +27,20 @@ let goods = {
 };
 
 //Задача 1
-let from = prompt("введите значение 'от':");
+let from = prompt("введите значение 'от'; для выхода введите 'exit'");
 from=from.trim();
-while (isNaN(Number(from)) && from !== 'exit'){
+while ((isNaN(Number(from)) && from !== 'exit') || !from.length){
        from=prompt("Введите верное значение (число); для выхода введите 'exit'");
        from=from.trim();
 }
-let to = prompt("введите значение 'до':");
+let to = prompt("введите значение 'до'; для выхода введите 'exit'");
 to=to.trim();
-while (isNaN(Number(to)) && to !== 'exit'){
+while ((isNaN(Number(to)) && to !== 'exit') || !to.length){
     to=prompt("Введите верное значение (число); для выхода введите 'exit'");
     to=to.trim();
 }
+from=Number(from);
+to=Number(to);
 let filtered = {};
 for (let prod in goods){
     if (goods[prod].price>=from && goods[prod].price<=to){
