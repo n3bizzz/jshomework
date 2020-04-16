@@ -11,21 +11,27 @@ console.log(sumNum(n));
 
 
 //Задача 2
-/*function spamDetect(sometext, ...words) {
-    console.log(sometext);
+function spamDetect(sometext, ...words) {
     let arrText=sometext.split(' ');
-    let i=0;
-    for(let el of words){
-
+    let rate=0;
+    for (let i=0; i<arrText.length; i++)
+    arrText[i]=arrText[i].replace(',','').replace('.','').replace('?','').replace('!','');
+    for(let eltext of words){
+        for(let elarr of arrText){
+            if(eltext === elarr){
+              rate++;
+            }
+        }
     }
-    console.log(arrText);
+return Math.floor(5/(arrText.length/rate));
 }
 let text = 'Вот дом, который построил Джек. А это пшеница, которая в темном чулане хранится в доме, который построил Джек. А это веселая птица-синица, которая часто ворует пшеницу, которая в темном чулане хранится в доме, который построил Джек.';
 let word1 = 'Джек';
 let word2 = 'доме';
 let word3 = 'веселая';
 let rating = spamDetect(text,word1,word2,word3);
-console.log(rating);*/
+console.log(`оценка содержания спама ${rating} балов из 5 `);
+
 
 //Задача 3
 function wordEndSelect (count){
@@ -37,6 +43,9 @@ function wordEndSelect (count){
  }
 let a =11117;
 wordEndSelect(a);
+
+
+//Задача 4 coming soon
 
 let users = [
     {
