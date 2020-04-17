@@ -1,12 +1,9 @@
 //Задача 1
 function sumNum(x) {
-    if(x<10) {
-        return x;
-    }
-    else {
-        return x%10+Math.floor(sumNum(x/10));}
+    if(x<10) return x;
+    else return x%10+Math.floor(sumNum(x/10));
 }
-n=33222441010;
+n=112299880;
 console.log(sumNum(n));
 
 
@@ -30,7 +27,7 @@ let word1 = 'Джек';
 let word2 = 'доме';
 let word3 = 'веселая';
 let rating = spamDetect(text,word1,word2,word3);
-console.log(`оценка содержания спама ${rating}`);
+console.log(`оценка содержания спама ${rating} из 5`);
 
 
 //Задача 3
@@ -45,7 +42,6 @@ let a =11117;
 wordEndSelect(a);
 
 
-//Задача 4 coming soon
 
 let users = [
     {
@@ -56,7 +52,7 @@ let users = [
     },
     {
         login: "asd",
-        age: 23,
+        age: 12,
         city: "Москва",
         favouriteLangs: ["python", "javascript"]
     },
@@ -74,41 +70,60 @@ let users = [
     },
     {
         login: "ght",
-        age: 45,
+        age: 16,
         city: "Владивосток",
         favouriteLangs: ["php", "ruby"]
     },
 ];
 
 
+//Задача 4
+function ageFilter(userArr, from, to=999) {
+let logins=[];
+console.log(to);
+for(let el of users){
+    if (el.age>=from && el.age<to)
+        logins.push(el.login);
+}
+return logins;
+}
+let to;
+let from=18;
+let logins = ageFilter(users,from,to);
+for (let el of logins)
+    console.log(`Пользователь ${el} подходит по возрасту`);
+
+
+
+
 //Задача 5
 function searchLogin(userArr, favouriteLangs) {
-    let logins = [];
+    let logins1 = [];
  for (let el of userArr){
      if (el.favouriteLangs.includes(favouriteLangs)){
-         logins.push(el.login);
+         logins1.push(el.login);
      }
  }
- return logins;
+ return logins1;
 }
 let favouriteLangs = 'c';
-let logins = searchLogin(users, favouriteLangs);
-for(let el of logins) {
+let logins1 = searchLogin(users, favouriteLangs);
+for(let el of logins1) {
     console.log(`Указанный язык является любимым у пользователя ${el}`)
 }
 
 
 //Задача 6
-function citySort(usersArr) {
+function citySort(usersArr1) {
     let arrLetter = [];
     let sortUsers= [];
-    for(let i=0;i<usersArr.length;i++)
-        arrLetter[i]=usersArr[i].city[0];
+    for(let i=0;i<usersArr1.length;i++)
+        arrLetter[i]=usersArr1[i].city[0];
     arrLetter.sort();
     for(let i=0;i<arrLetter.length;i++)
-        for(let j=0; j<usersArr.length;j++)
-        if(usersArr[j].city[0] === arrLetter[i]){
-            sortUsers[i]=usersArr[j];
+        for(let j=0; j<usersArr1.length;j++)
+        if(usersArr1[j].city[0] === arrLetter[i]){
+            sortUsers[i]=usersArr1[j];
         }
     return sortUsers;
 }
