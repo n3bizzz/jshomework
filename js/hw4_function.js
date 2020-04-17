@@ -130,3 +130,47 @@ function citySort(usersArr1) {
 users=citySort(users);
 console.log(users);
 
+
+//Задачки по методам массивов
+//TODO каждый элемент вложенного массива больше 0
+//TODO каждый элемент вложенного массива увеличить на 2
+arr = [[1,3,4],
+    [3,-7,9],
+    [-90,12,-12]
+];
+let moreZero = (elem, index, array) => elem>0;
+arr.forEach(function (elem,index,array) {
+    array[index]=elem.filter(moreZero);
+});
+console.log(arr);
+
+arr = [[1,3,4],
+    [3,7,9],
+    [-90,12,-12]
+];
+arr.forEach(function(elem,index,array) {
+    elem.forEach(function(elem1,index1,array1) {
+        array1[index1]+=2;
+    });
+});
+console.log(arr);
+// TODO:: возраст всех пользователей больше или равен 18
+arr = [
+    {
+        name: "qwe",
+        age: 19
+    },
+    {
+        name: "qwe",
+        age: 45
+    },
+    {
+        name: "qwe",
+        age: 16
+    }
+];
+
+let eightMore =  (elem,index,array)  => elem.age>18;
+if(arr.every(eightMore)) console.log('Все пользователи совершеннолетние');
+else console.log('Не все пользователи совершеннолетние');
+
