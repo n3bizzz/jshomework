@@ -170,7 +170,7 @@ arr = [
     }
 ];
 
-let eightMore =  (elem,index,array)  => elem.age>18;
+let eightMore =  (elem,index,array)  => elem.age>=18;
 if(arr.every(eightMore)) console.log('Все пользователи совершеннолетние');
 else console.log('Не все пользователи совершеннолетние');
 
