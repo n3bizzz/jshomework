@@ -1,9 +1,9 @@
-let price = ['cat', 'book', 'car'];
 let someObj = {
     cat: "Кот",
     book: "Книга",
     car: "Машина",
     generateField: function (n) {
+        let price = ['cat', 'book', 'car'];
         let a = Math.floor(Math.random()*(n*n));
         let b = Math.floor(Math.random()*(n*n));
         let c = Math.floor(Math.random()*(n*n));
