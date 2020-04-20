@@ -1,7 +1,7 @@
 //Задача 1
 function sumNum(x) {
     if(x<10) return x;
-    else return x%10+Math.floor(sumNum(x/10));
+    return x%10+Math.floor(sumNum(x/10));
 }
 n=112299880;
 console.log(sumNum(n));
