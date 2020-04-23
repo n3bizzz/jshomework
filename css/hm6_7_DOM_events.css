@@ -1,0 +1,32 @@
+#lotery {
+    position: relative;
+    display: grid;
+    margin-top: 30px;
+    gap: 10px;
+    padding: 10px;
+}
+.card{
+    background-color: orangered;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    height: 35px;
+    margin: 0;
+    padding-top: 15px;
+}
+.pricecard {
+    background-color: yellow;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    height: 35px;
+    margin: 0;
+    padding-top: 15px;
+}
+#try {
+    display: block;
+}
+.table {
+    border: 1px solid darkgray;
+}
