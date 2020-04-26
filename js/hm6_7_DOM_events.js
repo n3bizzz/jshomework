@@ -15,7 +15,6 @@ let someObj = {
         c = Math.floor(Math.random() * (n * n));
     } while (a===b || b===c ||c===a);
     let j=0;
-    let title;
     console.log(a,b,c);
     let mainsection = document.getElementById('lotery');
     mainsection.style.cssText = `grid-template-columns: repeat(${n},100px); grid-template-rows: repeat(${n},50px);`;
@@ -134,7 +133,7 @@ function generateTable(arrObj) {
     let cell;
     let row = table.insertRow(0);
     for (let el in arrObj[0]) {
-        cell = row.insertCell(0);
+        cell = row.insertCell(-1);
         cell.innerText = el;
         cell.setAttribute('data-name', 'sort');
     }
@@ -142,10 +141,10 @@ function generateTable(arrObj) {
        row=table.insertRow(-1);
        for (let el1 in el)
        {
-           cell=row.insertCell(0);
+           cell=row.insertCell(-1);
            cell.innerText=el[el1];
        }
       }
   tableArea.append(table);
 }
-generateTable(goods);
+generateTable(articles);
