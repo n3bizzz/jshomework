@@ -9,7 +9,7 @@ let allBooksCard=document.getElementById('books');
 let aut,tit,cnt,booksCard,formCount,btnPlus,btnMinus,cntValue,formsInvar;
 let forms=[];
 let i=0;
-do{
+while(i<books.length){
     booksCard=document.createElement('div');
     aut=document.createElement('h3');
     tit=document.createElement('h2');
@@ -42,18 +42,18 @@ do{
     formsInvar=changeCount.bind(forms[i],i);
     forms[i].addEventListener('click',formsInvar);
     i++;
-}while(i<books.length)
+}
 function changeCount(j,event) {
     console.log(j);
-    console.log(this.elements[j]);
+    console.log(this.elements[`${j}`]); //здесь не находит инпут с нужным name;
     if (event.target === this.elements.btnminus || event.target === this.elements.btnplus) {
         event.preventDefault();
     }
     if (event.target === this.elements.btnminus) {
-        this.elements[j].value--;
+        this.elements[`${j}`].value--;
     }
     if (event.target === this.elements.btnplus) {
-        this.elements[j].value++;
+        this.elements[`${j}`].value++;
     }
 }//в инпут не получается вывести новое value
 //при значении i=3, неполучается считать инпут с именем 3
