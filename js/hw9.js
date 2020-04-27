@@ -8,7 +8,8 @@ let books = [
 let allBooksCard=document.getElementById('books');
 let aut,tit,cnt,booksCard,formCount,btnPlus,btnMinus,cntValue,formsInvar;
 let forms=[];
-for(i=0;i<books.length;i++){
+let i=0;
+do{
     booksCard=document.createElement('div');
     aut=document.createElement('h3');
     tit=document.createElement('h2');
@@ -38,18 +39,21 @@ for(i=0;i<books.length;i++){
     booksCard.append(aut,tit,cnt,formCount);
     allBooksCard.append(booksCard);
     forms[i]=document.forms[`${i}`];
-}
-function changeCount(i,event) {
-    console.log(i);
-    console.log(this.elements[i]);
+    formsInvar=changeCount.bind(forms[i],i);
+    forms[i].addEventListener('click',formsInvar);
+    i++;
+}while(i<books.length)
+function changeCount(j,event) {
+    console.log(j);
+    console.log(this.elements[j]);
     if (event.target === this.elements.btnminus || event.target === this.elements.btnplus) {
         event.preventDefault();
     }
     if (event.target === this.elements.btnminus) {
-        this.elements[i].value--;
+        this.elements[j].value--;
     }
     if (event.target === this.elements.btnplus) {
-        this.elements[i].value++;
+        this.elements[j].value++;
     }
 }//в инпут не получается вывести новое value
 //при значении i=3, неполучается считать инпут с именем 3
