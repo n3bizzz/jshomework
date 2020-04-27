@@ -146,5 +146,17 @@ function generateTable(arrObj) {
        }
       }
   tableArea.append(table);
+      table.addEventListener('click', sortTbl);
+}
+function sortTbl(event) {
+ if(event.target.dataset.name === 'sort') {
+     let sortedRows = Array.from(this.rows).slice(1).sort((rowA, rowB) =>{
+         console.log(isNaN(rowA.cells[event.target.cellIndex].innerHTML));
+         console.log(isNaN(rowB.cells[event.target.cellIndex].innerHTML));
+         if(isNaN(rowA.cells[event.target.cellIndex].innerHTML)){
+             return rowA.cells[event.target.cellIndex].innerHTML.toLowerCase().localeCompare(rowB.cells[event.target.cellIndex].innerHTML.toLowerCase());
+         } else return Number(rowA.cells[event.target.cellIndex].innerHTML)-Number(rowB.cells[event.target.cellIndex].innerHTML);});
+     this.tBodies[0].append(...sortedRows);
+ }
 }
 generateTable(articles);
