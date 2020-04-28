@@ -55,11 +55,27 @@ function changeCount(j,event) {
     if (event.target === this.elements.btnplus) {
         this.elements[`${j}`].value++;
     }
-}//в инпут не получается вывести новое value
+}
 //при значении i=3, неполучается считать инпут с именем 3
 
-
-
+/*function generate(books)
+{
+    for (let item of books) {
+        let btnContainer = document.createElement("div");
+        btnContainer.innerHTML = `<input type="button" value="-">
+                             <input type="number" value='0' min="0" max="${item.count}">
+                                <input type="button" value="+">`;
+        btnContainer.addEventListener('click', changeCount.bind(btnContainer, item));
+        btnContainer.querySelector('input[type="number"]').addEventListener('input', changeNum.bind(btnContainer, item));
+    }
+}
+function changeCount(books,event) {
+    let clickElem = event.target.value // определили + или -
+    let numberInput = this.querySelector('input[type="number"]');
+    numberInput.value =
+        book.count
+}
+*/
 // задание на вывод данных
 let jsonFromServer = `[{"name":"Люся","age":"1 год","color":"трехцветная","additional_info":{"vaccinations":true,"passport":true}},{"name":"Том","age":"3 месяца","color":"белый","additional_info":{"vaccinations":false,"passport":false}},{"name":"Макс","age":2,"color":"серый","additional_info":{"vaccinations":false,"passport":true}},{"name":"Василий","age":3,"color":"черный","additional_info":{"vaccinations":true,"passport":true}}]`;
 let objFromJson = JSON.parse(jsonFromServer); // вывод информации по массиву объектов
@@ -69,3 +85,5 @@ let objFromJson = JSON.parse(jsonFromServer); // вывод информации
 //                Цвет:  цвет кошки
 //                Документы: да / нет
 //                Прививик: да / нет
+
+
